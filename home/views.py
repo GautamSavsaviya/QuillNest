@@ -1,10 +1,12 @@
 from django.shortcuts import render
-
+from blogs.models import Blog
 
 # Create your views here.
 
 # View for home page rendering
 def index(request):
+    blogs = Blog.objects.all()
+    print(blogs)
     return render(request, 'home/index.html')
 
 
