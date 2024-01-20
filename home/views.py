@@ -1,13 +1,20 @@
 from django.shortcuts import render
 from blogs.models import Blog
 
+
 # Create your views here.
 
 # View for home page rendering
 def index(request):
-    blogs = Blog.objects.all()
-    print(blogs)
-    return render(request, 'home/index.html')
+    blogs = Blog.objects.filter(is_published=True).order_by('-created_at')
+    recent_blogs = blogs[:5]
+
+    context = {
+        'blogs': blogs,
+        'recent_blogs': recent_blogs,
+        'range': range(1, 5)
+    }
+    return render(request, 'home/index.html', context=context)
 
 
 # View for about us page rendering

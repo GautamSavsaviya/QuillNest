@@ -10,7 +10,7 @@ class Blog(BaseModel):
     title = models.CharField(max_length=200)
     sub_title = models.CharField(max_length=300)
     description = models.TextField()
-    image = models.ImageField(upload_to='blogs/images', default='default-blog.png')
+    image = models.ImageField(upload_to='blogs/images', default='blogs/images/default-blog.png')
     slug = models.SlugField(max_length=100, null=True, blank=True, unique=True)
     is_published = models.BooleanField(default=False)
     published_at = models.DateTimeField(null=True, blank=True)
