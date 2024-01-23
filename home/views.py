@@ -6,7 +6,7 @@ from blogs.models import Blog
 
 # View for home page rendering
 def index(request):
-    blogs = Blog.objects.filter(is_published=True).order_by('-created_at')
+    blogs = Blog.objects.filter(is_published=True).order_by('-published_at')
     recent_blogs = blogs[:5]
 
     context = {

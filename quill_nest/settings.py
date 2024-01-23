@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # User define apps
     "blogs.apps.BlogsConfig",
     "home.apps.HomeConfig",
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [
